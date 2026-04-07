@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reservas - VeciGol</title>
+
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/formulario.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+
+
+<header class="header">
+    <div class="logo-area">
+        <img src="/img/logo-removebg-preview.png" alt="Logo VeciGol">
+        <div class="brand-text">
+            <h1>VECI GOL</h1>
+            <span class="slogan">La pasión que nos une</span>
+        </div>
+    </div>
+
+   <nav class="menu">
+    
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="formulario.html">Reservas</a>
+        <a href="galeria.html">Galería</a>
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="/html/carrito_ver.html" class="cart-link">
+        🛒 <span id="contador-carrito">0</span>
+    </a>
+    
+    
+    <p id="usuarioActivo"></p>
+</header>
+
+
+<main>
+
+<h2> Reservar tu Cancha</h2>
+
+<div id="disponibilidad-mensaje" class="disponibilidad-mensaje" style="display: none;"></div>
+
+<form id="formularioReserva" class="formulario-moderno">
+    
+    <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" placeholder="tu@correo.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="3XX XXX XXXX" required>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="cancha">Selecciona la Cancha</label>
+            <select id="cancha" required>
+                <option value="">Escoge una cancha...</option>
+                <option value="cancha1">Cancha 1 - $110.000/hora</option>
+                <option value="cancha2">Cancha 2 - $90.000/hora</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="jugadores">Número de Jugadores</label>
+            <input type="number" id="jugadores" placeholder="Ej: 10" min="4" max="22" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="fecha">Fecha y Hora</label>
+        <input type="datetime-local" id="fecha" required>
+    </div>
+
+    <div class="form-group">
+        <label for="duracion">Duración</label>
+        <select id="duracion" required>
+            <option value="">Selecciona duración...</option>
+            <option value="1">1 hora</option>
+            <option value="2">2 horas</option>
+            <option value="3">3 horas</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="comentarios">Comentarios Adicionales</label>
+        <textarea id="comentarios" placeholder="Cuéntanos si necesitas algo especial..." rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn-enviar">✅ Confirmar Reserva</button>
+
+</form>
+
+<div id="modalNoDisponible" class="modal-nodisponible" style="display: none;">
+    <div class="modal-contenido">
+        <div class="modal-header">
+            <h3>❌ Cancha No Disponible</h3>
+            <button class="cerrar-modal" onclick="cerrarModalNoDisponible()">✕</button>
+        </div>
+        
+        <div class="modal-body">
+            <p id="mensaje-nodisponible"></p>
+            
+            <div class="opciones-agendamiento">
+                <h4>Opciones disponibles:</h4>
+                <div id="horarios-disponibles" class="horarios-grid">
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn-agendar-diferente" onclick="agendarDiferente()">📅 Agendar en otra fecha</button>
+            <button class="btn-cancelar" onclick="cerrarModalNoDisponible()">Volver</button>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+
+<footer>
+    <div class="footer-contenido">
+        
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📍 Cl. 19 #69 - 86, Bogotá</p>
+            <p>📞 314 341 5480</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Horarios</h4>
+            <p><strong>Lunes a Domingo</strong></p>
+            <p>10:00 AM - 11:00 PM</p>
+        </div>
+
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <ul class="redes-sociales">
+                    <li><a href="https://www.facebook.com/share/18GQwZGR7C/?mibextid=wwXIfr" target="_blank" title="Facebook"><img src="/img/facebook.jpg" alt="Facebook"></a></li>
+                    <li><a href="https://www.instagram.com/vecigol_f5?igsh=MTZ2eTJtODU0ZXAzMw==" target="_blank" title="Instagram"><img src="/img/instagram.jpg" alt="Instagram"></a></li>
+                    <li><a href="https://api.whatsapp.com/send/?phone=%2B573143415480&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp"><img src="/img/whatsap.jpg" alt="WhatsApp"></a></li>
+                    <li><a href="https://www.tiktok.com/@vecigol3?_r=1&_t=ZS-945pRgvrkEC" target="_blank" title="TikTok"><img src="/img/tiktok.jpg" alt="TikTok"></a></li>
+                </ul>
+            </div>
+    </div>
+
+<script src="/js/reservas.js"></script>
+<script src="/js/carrito.js"></script>
+</body>
+</html>

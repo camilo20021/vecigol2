@@ -1,0 +1,130 @@
+h2{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 32px;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.galeria img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.galeria img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+    animation: zoom 0.3s ease-out;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cerrar:hover {
+    color: #f97316;
+    transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 5%;
+    }
+    .torneos-grid {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .menu a {
+        width: 100%;
+        display: block;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .carrusel-container {
+        height: 300px;
+    }
+
+    .nosotros, .servicios-grid {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .btn-reserva {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}

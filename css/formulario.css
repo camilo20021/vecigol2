@@ -1,0 +1,372 @@
+h2{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    font-weight: 800;
+    letter-spacing: 1px;
+    animation: slideDown 0.8s ease-out, glow 3s ease-in-out infinite;
+    text-transform: uppercase;
+    filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.4));
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(249, 115, 22, 0.6));
+    }
+}
+
+h2:hover {
+    animation-play-state: paused;
+    filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.8));
+}
+
+.formulario-moderno {
+    max-width: 600px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, #1a202c 0%, #111827 100%);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 2px solid rgba(249, 115, 22, 0.2);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #f97316;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid rgba(249, 115, 22, 0.3);
+    background-color: rgba(51, 65, 85, 0.7);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f97316;
+    background-color: rgba(71, 85, 105, 0.9);
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-enviar {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: rgb(16, 15, 15);
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+}
+
+.btn-enviar:active {
+    transform: translateY(-1px);
+}
+
+.modal-nodisponible {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-contenido {
+    background: linear-gradient(135deg, #1a202c 0%, #111827 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(249, 115, 22, 0.3);
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 25px;
+    border-bottom: 2px solid rgba(249, 115, 22, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: #f97316;
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cerrar-modal {
+    background: none;
+    border: none;
+    color: #f97316;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cerrar-modal:hover {
+    color: #ea580c;
+    transform: scale(1.2);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-body p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.opciones-agendamiento h4 {
+    color: #f97316;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-horario {
+    padding: 12px;
+    background: linear-gradient(135deg, #0f766e 0%, #064e4b 100%);
+    color: #ffffff;
+    border: 2px solid rgba(249, 115, 22, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-horario:hover {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border-color: #f97316;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+}
+
+.modal-footer {
+    padding: 20px 25px;
+    border-top: 2px solid rgba(249, 115, 22, 0.2);
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.btn-agendar-diferente,
+.btn-cancelar {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-agendar-diferente {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: #111827;
+}
+
+.btn-agendar-diferente:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+}
+
+.btn-cancelar {
+    background-color: transparent;
+    color: #ef4444;
+    border: 2px solid #ef4444;
+}
+
+.btn-cancelar:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    transform: translateY(-3px);
+}
+
+.disponibilidad-mensaje {
+    margin: 20px auto;
+    padding: 15px 20px;
+    max-width: 600px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    animation: slideDown 0.3s ease-out;
+}
+
+.disponibilidad-mensaje.exito {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 2px solid #bbf7d0;
+}
+
+.disponibilidad-mensaje.error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 2px solid #fecaca;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .formulario-moderno {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .menu a {
+        width: 100%;
+        display: block;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .formulario-moderno {
+        max-width: 95%;
+        padding: 25px;
+        gap: 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

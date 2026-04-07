@@ -1,0 +1,110 @@
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#productosGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+.producto-card{
+    background-color: #111827;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.producto-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.producto-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.producto-card h3{
+    margin: 10px 0;
+}
+
+.producto-card p{
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.producto-card button{
+    background-color: #f97316;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.producto-card button:hover{
+    background-color: #ea580c;
+}
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 5%;
+    }
+    .torneos-grid {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .menu a {
+        width: 100%;
+        display: block;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .carrusel-container {
+        height: 300px;
+    }
+
+    .nosotros, .servicios-grid {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text h1 {
+        font-size: 1.2rem;
+    }
+    
+    .btn-reserva {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}

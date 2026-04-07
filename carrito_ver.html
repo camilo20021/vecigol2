@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito - VeciGol</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    
+</head>
+<body>
+
+<header class="header">
+    <div class="logo-area">
+        <img src="/img/logo-removebg-preview.png" alt="Logo VeciGol">
+        <h1>VECI GOL</h1>
+    </div>
+    <nav class="menu">
+        <a href="index.html">Volver a Inicio</a>
+    </nav>
+</header>
+
+<main class="carrito-container">
+    <h2 style="text-align: center; color: #f97316;">🛒 Tu Pedido</h2>
+    
+    <div id="lista-carrito"></div>
+    
+    <template id="carrito-vacio-template">
+        <p style="text-align:center; padding:20px;">El carrito está vacío. ⚽</p>
+    </template>
+    
+    <template id="item-carrito-template">
+        <div class="item-carrito">
+            <div class="item-info">
+                <strong data-nombre></strong><br>
+                <small data-cantidad-precio></small>
+            </div>
+            <div class="item-cantidad">
+                <button class="btn-cantidad" onclick="decrementarCantidad(this)" title="Disminuir cantidad">−</button>
+                <input type="number" class="input-cantidad" data-cantidad value="1" min="0">
+                <button class="btn-cantidad" onclick="incrementarCantidad(this)" title="Aumentar cantidad">+</button>
+            </div>
+            <div class="item-total">
+                <strong data-subtotal></strong>
+            </div>
+        </div>
+    </template>
+
+    <div class="total-seccion">
+        Total: <span id="precio-total">$0</span>
+    </div>
+
+    <a href="#" class="btn-whatsapp" onclick="enviarPedidoWhatsApp()">
+        📱 Finalizar Pedido por WhatsApp 
+    </a>
+    
+    <div class="botones-footer">
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <a href="productos.html" class="btn-seguir-comprando">Seguir comprando</a>
+    </div>
+</main>
+
+<script src="/js/carrito.js"></script>
+
+
+<footer>
+    <div class="footer-contenido">
+        
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📍 Cl. 19 #69 - 86, Bogotá</p>
+            <p>📞 314 341 5480</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Horarios</h4>
+            <p><strong>Lunes a Domingo</strong></p>
+            <p>10:00 AM - 11:00 PM</p>
+        </div>
+
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <ul class="redes-sociales">
+                    <li><a href="https://www.facebook.com/share/18GQwZGR7C/?mibextid=wwXIfr" target="_blank" title="Facebook"><img src="/img/facebook.jpg" alt="Facebook"></a></li>
+                    <li><a href="https://www.instagram.com/vecigol_f5?igsh=MTZ2eTJtODU0ZXAzMw==" target="_blank" title="Instagram"><img src="/img/instagram.jpg" alt="Instagram"></a></li>
+                    <li><a href="https://api.whatsapp.com/send/?phone=%2B573143415480&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp"><img src="/img/whatsap.jpg" alt="WhatsApp"></a></li>
+                    <li><a href="https://www.tiktok.com/@vecigol3?_r=1&_t=ZS-945pRgvrkEC" target="_blank" title="TikTok"><img src="/img/tiktok.jpg" alt="TikTok"></a></li>
+                </ul>
+            </div>
+    </div>
+</body>
+</html>
